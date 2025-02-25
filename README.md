@@ -151,7 +151,68 @@ _Image Source: Wikipedia_
   - Precision & Recall
   - F1-score
   - ROC-AUC Score
-- **Hyperparameter Tuning**: Used **GridSearchCV** and **RandomizedSearchCV** to optimize model parameters.
+
+ - **Hyperparameter Tuning**: Used **RandomizedSearchCV** to optimize model parameters.
+
+### Random Forest Performance
+
+**📌 Random Forest Performance Before Tuning:**
+
+- Accuracy: 0.7799
+- Precision: 0.83 (Class 0), 0.60 (Class 1)
+- Recall: 0.88 (Class 0), 0.51 (Class 1)
+- F1-score: 0.85 (Class 0), 0.55 (Class 1)
+- Confusion Matrix:
+
+![image](https://github.com/user-attachments/assets/debc1023-ffd1-46a2-b25a-e2eae0ddeac3)
+
+**📌 Random Forest Performance After Tuning:**
+
+- Accuracy: 0.7934
+- Precision: 0.84 (Class 0), 0.63 (Class 1)
+- Recall: 0.89 (Class 0), 0.54 (Class 1)
+- F1-score: 0.86 (Class 0), 0.58 (Class 1)
+- Confusion Matrix:
+
+![image](https://github.com/user-attachments/assets/e836e5fc-d262-41c9-bca3-97ced1373763)
+
+**📌 SVM Performance:**
+
+- Accuracy: 0.7629
+- Precision: 0.89 (Class 0), 0.54 (Class 1)
+- Recall: 0.78 (Class 0), 0.73 (Class 1)
+- F1-score: 0.83 (Class 0), 0.62 (Class 1)
+- Confusion Matrix:
+
+![image](https://github.com/user-attachments/assets/c9e4dc42-6581-428c-89ff-1f9f95c1eccc)
+
+**📌 XGBoost Performance Before Tuning:**
+
+- Accuracy: 0.7608
+- Precision: 0.87 (Class 0), 0.54 (Class 1)
+- Recall: 0.79 (Class 0), 0.68 (Class 1)
+- F1-score: 0.83 (Class 0), 0.60 (Class 1)
+- Confusion Matrix:
+
+![image](https://github.com/user-attachments/assets/8b2da046-28ee-4e8b-8595-d25a276efc1b)
+
+**📌 XGBoost Performance After Tuning:**
+
+- Accuracy: 0.7530
+- Precision: 0.85 (Class 0), 0.53 (Class 1)
+- Recall: 0.81 (Class 0), 0.60 (Class 1)
+- F1-score: 0.83 (Class 0), 0.56 (Class 1)
+- Confusion Matrix:
+
+![image](https://github.com/user-attachments/assets/48e9e56e-8983-4261-93cc-b0d76856672b)
+
+
+
+
+
+
+
+
 
 
 ## Installation & Usage
