@@ -94,7 +94,9 @@ XGBoost is a powerful gradient boosting algorithm optimized for speed and perfor
 4. **Gradient Descent Update**: Instead of minimizing errors directly, XGBoost updates predictions using gradient descent to optimize performance.  
 5. **Apply Regularization**: L1 (Lasso) and L2 (Ridge) regularization prevent overfitting, and shrinkage (learning rate) ensures stability.  
 6. **Repeat Until Convergence**: The process is repeated multiple times, adding new trees iteratively to correct errors.  
-7. **Make Final Predictions**: The final prediction is obtained by combining all weak learners using weighted averaging (for regression) or majority voting (for classification).  
+7. **Make Final Predictions**: The final prediction is obtained by combining all weak learners using weighted averaging (for regression) or majority voting (for classification).
+
+![image](https://github.com/user-attachments/assets/3e9b6ebe-64b0-4c31-bc17-cb4744869e52)
 
 **Why XGBoost is Powerful?**  
 ✅ Handles missing values automatically  
@@ -103,9 +105,44 @@ XGBoost is a powerful gradient boosting algorithm optimized for speed and perfor
 ✅ Optimized for large datasets  
 ✅ Supports early stopping for efficiency  
 
+### **Support Vector Machine (SVM) with RBF Kernel**  
+
+Support Vector Machine (SVM) is a powerful supervised learning algorithm used for classification and regression tasks. The **Radial Basis Function (RBF) kernel**, also known as the Gaussian kernel, is one of the most commonly used kernels in SVM due to its ability to handle non-linearly separable data.  
+
+**How It Works**  
+1. **Mapping to a Higher-Dimensional Space**  
+   - When data is not linearly separable in its original space, the **RBF kernel** transforms it into a higher-dimensional space where a linear decision boundary can be found.  
+   - This transformation is done implicitly using a kernel trick, avoiding the need to compute explicit feature mappings.  
+
+2. **Measuring Similarity**  
+   - The RBF kernel computes the similarity between two data points **x** and **x'** using the formula:  
+     \[
+     K(x, x') = \exp\left(-\gamma \|x - x'\|^2\right)
+     \]  
+   - Here, **γ (gamma)** controls the influence of a single training example.  
+     - **Higher γ** → Closer data points have more influence.  
+     - **Lower γ** → Data points farther apart can still affect each other.  
+
+3. **Finding the Optimal Hyperplane**  
+   - The SVM algorithm finds a **maximum-margin hyperplane** in the transformed space.  
+   - Support vectors (critical data points) help define the decision boundary.  
+
+4. **Regularization with C Parameter**  
+   - The **C parameter** controls the trade-off between maximizing the margin and minimizing classification errors.  
+     - **High C** → Low bias, high variance (tighter margin).  
+     - **Low C** → High bias, low variance (wider margin).  
+
+### **Pros & Cons**  
+✅ **Pros**:  
+- Handles non-linearly separable data well.  
+- Effective in high-dimensional spaces.  
+- Less affected by outliers.  
+
 **Illustration**  
 
-🔗 Example: [XGBoost Workflow Diagram](https://www.researchgate.net/figure/XGBoost-Algorithm-Diagram_fig3_340579388)  
+![SVM with RBF Kernel](https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/SVM_margin.png/300px-SVM_margin.png)  
+
+_Image Source: Wikipedia_
 
 
 ## Model Evaluation
