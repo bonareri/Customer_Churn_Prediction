@@ -20,7 +20,8 @@ The dataset contains **7,043 customer records** with **21 features**, including 
 - **Feature Scaling**: Used **RobustScaler** for numerical features (`tenure`, `MonthlyCharges`, `TotalCharges`) to handle skewed distributions and outliers effectively. 
 
 ### 2. Exploratory Data Analysis (EDA)
--**Summary Statistics**: 
+#### Summary Statistics
+
 <img width="380" alt="EDA" src="https://github.com/user-attachments/assets/6c9877be-8c09-471f-a0a8-b57f000c0fd4" />
 
 **Key Insights**  
@@ -29,16 +30,18 @@ The dataset contains **7,043 customer records** with **21 features**, including 
 - **Wide variation in MonthlyCharges**, suggesting different service levels.  
 - Some customers have **TotalCharges = 0**, likely due to recent sign-ups.
 
-- **Churn Distribution**:
-  ![image](https://github.com/user-attachments/assets/1b42599f-deef-4ff1-be13-24795f24b410)
+#### Churn Distribution
+
+![image](https://github.com/user-attachments/assets/1b42599f-deef-4ff1-be13-24795f24b410)
 
   **Key Insights:**
 - The dataset has an **imbalanced churn distribution**, with significantly more customers who did not churn.
 - This imbalance may impact model training, requiring techniques like **resampling** or adjusting class weights.
 - A **26.5% churn rate** suggests that a considerable portion of customers are leaving, indicating potential business challenges.
 
-- **Distribution of Numerical Features**:
-  ![image](https://github.com/user-attachments/assets/229d4ef8-d510-4bb0-8da5-f77603e88857)
+#### Distribution of Numerical Features
+
+![image](https://github.com/user-attachments/assets/229d4ef8-d510-4bb0-8da5-f77603e88857)
 
   **Key Insights**  
 - **Tenure is right-skewed**, with many short-term and long-term customers.  
@@ -47,8 +50,9 @@ The dataset contains **7,043 customer records** with **21 features**, including 
 - **Mean > Median for all features**, indicating the influence of high-value customers.  
 - **Churn is likely linked to pricing and tenure**, as short-term customers tend to leave early.  
 
-- **Feature Correlation**:
-  ![image](https://github.com/user-attachments/assets/fa85616e-e0d7-4668-a799-f960d8defe8b)
+#### Feature Correlation
+
+![image](https://github.com/user-attachments/assets/fa85616e-e0d7-4668-a799-f960d8defe8b)
 
 - **Key Insights**
 - Customers with **fiber optic internet, electronic check payments, and high monthly charges** are more likely to churn.
