@@ -132,29 +132,22 @@ Support Vector Machine (SVM) is a powerful supervised learning algorithm used fo
      - **High C** → Low bias, high variance (tighter margin).  
      - **Low C** → High bias, low variance (wider margin).  
 
-### **Pros & Cons**  
-✅ **Pros**:  
+**Pros**:  
 - Handles non-linearly separable data well.  
 - Effective in high-dimensional spaces.  
 - Less affected by outliers.  
 
-**Illustration**  
-
-![SVM with RBF Kernel](https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/SVM_margin.png/300px-SVM_margin.png)  
-
-_Image Source: Wikipedia_
-
-
 ## Model Evaluation
-- **Metrics Used**:
-  - Accuracy
-  - Precision & Recall
-  - F1-score
-  - ROC-AUC Score
+### Metrics Used
+
+- **Accuracy**: Measures the percentage of correctly classified instances out of the total. Best for balanced datasets.  
+- **Precision & Recall**:  
+  - **Precision**: The proportion of correctly predicted positive cases out of all predicted positives (useful when false positives are costly).  
+  - **Recall**: The proportion of actual positive cases correctly identified (important when missing positives is costly).  
+- **F1-score**: The harmonic mean of precision and recall, balancing both in cases of imbalanced datasets.  
+- **ROC-AUC Score**: Measures how well the model distinguishes between classes, with higher values indicating better performance across different thresholds.  
 
  - **Hyperparameter Tuning**: Used **RandomizedSearchCV** to optimize model parameters.
-
-### Random Forest Performance
 
 **📌 Random Forest Performance Before Tuning:**
 
@@ -162,9 +155,8 @@ _Image Source: Wikipedia_
 - Precision: 0.83 (Class 0), 0.60 (Class 1)
 - Recall: 0.88 (Class 0), 0.51 (Class 1)
 - F1-score: 0.85 (Class 0), 0.55 (Class 1)
-- Confusion Matrix:
 
-![image](https://github.com/user-attachments/assets/debc1023-ffd1-46a2-b25a-e2eae0ddeac3)
+![image](https://github.com/user-attachments/assets/1d037aa3-f1de-4a2c-9101-458bb64cc94a)
 
 **📌 Random Forest Performance After Tuning:**
 
@@ -172,9 +164,8 @@ _Image Source: Wikipedia_
 - Precision: 0.84 (Class 0), 0.63 (Class 1)
 - Recall: 0.89 (Class 0), 0.54 (Class 1)
 - F1-score: 0.86 (Class 0), 0.58 (Class 1)
-- Confusion Matrix:
 
-![image](https://github.com/user-attachments/assets/e836e5fc-d262-41c9-bca3-97ced1373763)
+![image](https://github.com/user-attachments/assets/4993a2af-d23f-4bf8-8666-496c3355e881)
 
 **📌 SVM Performance:**
 
@@ -206,23 +197,19 @@ _Image Source: Wikipedia_
 
 ![image](https://github.com/user-attachments/assets/48e9e56e-8983-4261-93cc-b0d76856672b)
 
+### Model Performance Summary
 
+| Model                     | Accuracy | Precision (Class 1) | Recall (Class 1) | F1-score (Class 1) |
+|----------------------    -|----------|---------------------|------------------|------------------  |
+| Random Forest (Tuned)     | 0.7934   | 0.63                | 0.54             | 0.58               |
+| Random Forest (Baseline)  | 0.7799   | 0.60                | 0.51             | 0.55               |
+| SVM                       | 0.7629   | 0.54                | 0.73             | 0.62               |
+| XGBoost                   | 0.7608   | 0.54                | 0.68             | 0.60               |
+| XGBoost (Tuned)           | 0.7530   | 0.53                | 0.60             | 0.56               |
 
-
-
-
-
-
-
-
-## Installation & Usage
-
-### Prerequisites
-- **Python 3.8+**
-- **Jupyter Notebook / Google Colab**
-- **Required Libraries**:
-  ```bash
-  pip install pandas numpy matplotlib seaborn scikit-learn xgboost
-
-
-
+### **Best Model**
+- False Negatives (Missed Churners) are costly because the company loses a customer.
+- False Positives (Incorrectly Predicted Churners) may lead to unnecessary retention efforts and costs.
+- F1-score ensures the model optimally detects real churners while minimizing false alerts.
+- Since the primary goal is to predict churners effectively while avoiding excessive false positives, F1-score is the best metric for selecting the most suitable model.
+- **Support Vector Machine (SVM)** is the best model based on F1-score (0.62) and overall balance between precision and recall.
