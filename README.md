@@ -214,18 +214,17 @@ Support Vector Machine (SVM) is a powerful supervised learning algorithm used fo
 - Since telecom churn prediction focuses on identifying at-risk customers to prevent churn, recall is crucial.
 - Missing a churner (false negative) means losing a customer, which is costly.
 - XGBoost (Baseline) is the best choice based on recall (0.71), meaning it captures the most churners.
-- 
 
-### Conclusion
+## Conclusion
 
-#### Insights
+### Insights
 - The analysis of telecom customer churn reveals key factors influencing customer retention, such as **contract type, monthly charges, tenure, and service subscriptions**.
 - Customers with **month-to-month contracts** exhibit a higher likelihood of churning compared to those with longer-term contracts.
 - **High monthly charges** correlate with higher churn rates, indicating that pricing plays a crucial role in customer retention.
 - Customers who do not subscribe to additional services like **tech support and streaming services** tend to leave at a higher rate.
 - **Longer tenure** customers are less likely to churn, suggesting that loyalty programs may play a role in reducing churn.
 
-#### Recommendations
+### Recommendations
 1. **Introduce Loyalty Programs**
    - Provide incentives for long-term contracts, such as discounts or additional services, to reduce churn among month-to-month subscribers.
 
