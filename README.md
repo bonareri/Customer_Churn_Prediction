@@ -149,67 +149,70 @@ Support Vector Machine (SVM) is a powerful supervised learning algorithm used fo
 
  - **Hyperparameter Tuning**: Used **RandomizedSearchCV** to optimize model parameters.
 
-**📌 Random Forest Performance Before Tuning:**
+### 📌 Random Forest Performance Before Tuning:
 
-- Accuracy: 0.7799
-- Precision: 0.83 (Class 0), 0.60 (Class 1)
-- Recall: 0.88 (Class 0), 0.51 (Class 1)
-- F1-score: 0.85 (Class 0), 0.55 (Class 1)
+- Accuracy: 0.76
+- Precision: 0.88 (Class 0), 0.54 (Class 1)
+- Recall: 0.79 (Class 0), 0.70 (Class 1)
+- F1-score: 0.83 (Class 0), 0.61 (Class 1)
 
-![image](https://github.com/user-attachments/assets/1d037aa3-f1de-4a2c-9101-458bb64cc94a)
+![image](https://github.com/user-attachments/assets/2943cf20-b6bb-4e7c-986f-2eb8aa9988f0)
 
-**📌 Random Forest Performance After Tuning:**
+- The model performs well for predicting "No Churn" cases (Class 0) but struggles with predicting actual churn cases (Class 1).
 
-- Accuracy: 0.7934
-- Precision: 0.84 (Class 0), 0.63 (Class 1)
-- Recall: 0.89 (Class 0), 0.54 (Class 1)
-- F1-score: 0.86 (Class 0), 0.58 (Class 1)
+**Ovefitting Analysis**
 
-![image](https://github.com/user-attachments/assets/4993a2af-d23f-4bf8-8666-496c3355e881)
+![image](https://github.com/user-attachments/assets/a705cf9f-1b5a-47ba-9680-7bb39ccb7a02)
+
+### 📌 Random Forest Performance After Tuning:
+
+- Accuracy: 0.76
+- Precision: 0.87 (Class 0), 0.54 (Class 1)
+- Recall: 0.79 (Class 0), 0.67 (Class 1)
+- F1-score: 0.83 (Class 0), 0.60 (Class 1)
+
+![image](https://github.com/user-attachments/assets/da7a4e54-fa7d-47b0-b002-db14041d020e)
 
 **📌 SVM Performance:**
 
-- Accuracy: 0.7629
-- Precision: 0.89 (Class 0), 0.54 (Class 1)
-- Recall: 0.78 (Class 0), 0.73 (Class 1)
-- F1-score: 0.83 (Class 0), 0.62 (Class 1)
-- Confusion Matrix:
+- Accuracy: 0.78
+- Precision: 0.86 (Class 0), 0.57 (Class 1)
+- Recall: 0.83 (Class 0), 0.64 (Class 1)
+- F1-score: 0.84 (Class 0), 0.60 (Class 1)
 
-![image](https://github.com/user-attachments/assets/c9e4dc42-6581-428c-89ff-1f9f95c1eccc)
+![image](https://github.com/user-attachments/assets/0651ee67-6f30-424f-b860-9f41af97cb92)
 
 **📌 XGBoost Performance Before Tuning:**
 
-- Accuracy: 0.7608
-- Precision: 0.87 (Class 0), 0.54 (Class 1)
-- Recall: 0.79 (Class 0), 0.68 (Class 1)
-- F1-score: 0.83 (Class 0), 0.60 (Class 1)
-- Confusion Matrix:
+- Accuracy: 0.76
+- Precision: 0.88 (Class 0), 0.54 (Class 1)
+- Recall: 0.78 (Class 0), 0.71 (Class 1)
+- F1-score: 0.83 (Class 0), 0.61 (Class 1)
 
-![image](https://github.com/user-attachments/assets/8b2da046-28ee-4e8b-8595-d25a276efc1b)
+![image](https://github.com/user-attachments/assets/0081e53a-7f24-46ef-a9b1-1794bc40cec5)
 
 **📌 XGBoost Performance After Tuning:**
 
-- Accuracy: 0.7530
+- Accuracy: 0.75
 - Precision: 0.85 (Class 0), 0.53 (Class 1)
 - Recall: 0.81 (Class 0), 0.60 (Class 1)
 - F1-score: 0.83 (Class 0), 0.56 (Class 1)
-- Confusion Matrix:
 
 ![image](https://github.com/user-attachments/assets/48e9e56e-8983-4261-93cc-b0d76856672b)
 
 ### Model Performance Summary
 
 | Model                     | Accuracy | Precision (Class 1) | Recall (Class 1) | F1-score (Class 1) |
-|----------------------    -|----------|---------------------|------------------|------------------  |
-| Random Forest (Tuned)     | 0.7934   | 0.63                | 0.54             | 0.58               |
-| Random Forest (Baseline)  | 0.7799   | 0.60                | 0.51             | 0.55               |
-| SVM                       | 0.7629   | 0.54                | 0.73             | 0.62               |
-| XGBoost                   | 0.7608   | 0.54                | 0.68             | 0.60               |
-| XGBoost (Tuned)           | 0.7530   | 0.53                | 0.60             | 0.56               |
+|---------------------------|----------|---------------------|------------------|------------------  |
+| **Random Forest (Tuned)**  | **0.7600**  | **0.54**             | **0.67**         | **0.60**          |
+| **Random Forest (Baseline)** | **0.7600**  | **0.54**             | **0.70**         | **0.61**          |
+| **SVM**                   | **0.7771**  | **0.57**             | **0.64**         | **0.60**          |
+| **XGBoost**               | **0.7601**  | **0.54**             | **0.71**         | **0.61**          |
+| **XGBoost (Tuned)**       | **0.7530**  | **0.53**             | **0.60**         | **0.56**          |
 
 ### **Best Model**
 - False Negatives (Missed Churners) are costly because the company loses a customer.
 - False Positives (Incorrectly Predicted Churners) may lead to unnecessary retention efforts and costs.
 - F1-score ensures the model optimally detects real churners while minimizing false alerts.
 - Since the primary goal is to predict churners effectively while avoiding excessive false positives, F1-score is the best metric for selecting the most suitable model.
-- **Support Vector Machine (SVM)** is the best model based on F1-score (0.62) and overall balance between precision and recall.
+- Based on the insights, Random Forest (Tuned) is the best model as it provides a good balance between precision (0.54) and recall (0.67) for Class 1, with an F1-score of 0.60. Additionally, it maintains a strong overall accuracy of 0.76,
