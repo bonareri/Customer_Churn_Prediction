@@ -173,7 +173,7 @@ Support Vector Machine (SVM) is a powerful supervised learning algorithm used fo
 
 ![image](https://github.com/user-attachments/assets/da7a4e54-fa7d-47b0-b002-db14041d020e)
 
-**📌 SVM Performance:**
+### 📌 SVM Performance:
 
 - Accuracy: 0.78
 - Precision: 0.86 (Class 0), 0.57 (Class 1)
@@ -182,7 +182,7 @@ Support Vector Machine (SVM) is a powerful supervised learning algorithm used fo
 
 ![image](https://github.com/user-attachments/assets/0651ee67-6f30-424f-b860-9f41af97cb92)
 
-**📌 XGBoost Performance Before Tuning:**
+### 📌 XGBoost Performance Before Tuning:
 
 - Accuracy: 0.76
 - Precision: 0.88 (Class 0), 0.54 (Class 1)
@@ -191,14 +191,14 @@ Support Vector Machine (SVM) is a powerful supervised learning algorithm used fo
 
 ![image](https://github.com/user-attachments/assets/0081e53a-7f24-46ef-a9b1-1794bc40cec5)
 
-**📌 XGBoost Performance After Tuning:**
+### 📌 XGBoost Performance After Tuning:
 
 - Accuracy: 0.75
 - Precision: 0.85 (Class 0), 0.53 (Class 1)
 - Recall: 0.81 (Class 0), 0.60 (Class 1)
 - F1-score: 0.83 (Class 0), 0.56 (Class 1)
 
-![image](https://github.com/user-attachments/assets/48e9e56e-8983-4261-93cc-b0d76856672b)
+![image](https://github.com/user-attachments/assets/447a1412-1aba-45ee-bc1e-34039774998f)
 
 ### Model Performance Summary
 
@@ -211,8 +211,6 @@ Support Vector Machine (SVM) is a powerful supervised learning algorithm used fo
 | **XGBoost (Tuned)**       | **0.7530**  | **0.53**             | **0.60**         | **0.56**          |
 
 ### **Best Model**
-- False Negatives (Missed Churners) are costly because the company loses a customer.
-- False Positives (Incorrectly Predicted Churners) may lead to unnecessary retention efforts and costs.
-- F1-score ensures the model optimally detects real churners while minimizing false alerts.
-- Since the primary goal is to predict churners effectively while avoiding excessive false positives, F1-score is the best metric for selecting the most suitable model.
-- Based on the insights, Random Forest (Tuned) is the best model as it provides a good balance between precision (0.54) and recall (0.67) for Class 1, with an F1-score of 0.60. Additionally, it maintains a strong overall accuracy of 0.76,
+- Since telecom churn prediction focuses on identifying at-risk customers to prevent churn, recall is crucial.
+- Missing a churner (false negative) means losing a customer, which is costly.
+- XGBoost (Baseline) is the best choice based on recall (0.71), meaning it captures the most churners.
